@@ -57,5 +57,8 @@ public class Generator {
       bars.updateUI();     // tells the bar chart to update its picture
    }
 
-   
+   public static void main(String[] args) {
+      Generator g = new Generator();
+      g.tester(1,4);
+   }
 }
