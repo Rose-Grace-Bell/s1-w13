@@ -41,8 +41,6 @@ public class DotRace extends JPanel {
         
         runRace();
     }
-
-    
     
     public void runRace ( ) {
         Dot mover;
@@ -122,5 +120,7 @@ public class DotRace extends JPanel {
         }
     }
     
-    
+    public static void main(String[] args) {
+        new DotRace();
+    }
 }  // end DotRace

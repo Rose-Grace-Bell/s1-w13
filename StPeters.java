@@ -11,7 +11,10 @@ public class StPeters
     }
     
     public void optimizeEntryFee(){
-        //your code here -- after you write and test runGame() and flip()
+        for(double i=1; i<5; i=i+0.1){
+            this.entryFee = i;
+            tester(1000);
+        }
     }
     
     public void tester(int howMany){
@@ -20,7 +23,7 @@ public class StPeters
         while(counter < howMany)
         {
            pot = 1;
-           if(runGame() <= this.entryFee)
+           if(runGame() >= this.entryFee)
                 countBreakEvenOrWin++;
            counter++;
         }
@@ -29,11 +32,26 @@ public class StPeters
     
     //returns the amount of money you win in the game
     private int runGame(){
-           //your code here
+        pot = 1;
+        boolean b = true;
+           while(b){
+            if(this.flip() == 1){
+                pot=pot*2;
+            }
+            else b=false;
+           }
+           return pot;
     }
     
     //code to return a 0 or 1 simulating a flip
     private int flip(){
-        //your code here
+        int c =0;
+        c=r.nextInt(2);
+        return c;
     }    
+    public static void main(String[] args) {
+        StPeters gam = new StPeters(2.1);
+        gam.optimizeEntryFee();
+
+    }
 }
